@@ -36,7 +36,3 @@ for line in file:
             continue    
     else:
         value = 0
-
-
-# Part II of day 1
-# Calculate the last three values and sum them up
