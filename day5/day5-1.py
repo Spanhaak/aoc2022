@@ -42,12 +42,14 @@ with open("/Users/marco.spanhaak1/code/python/aoc2022/day5/input.txt", "r", enco
         boxes = int(line[0])
 
         selected_crates = bunch_of_crates[from_dict][-boxes:]
+        print(bunch_of_crates.values())
         print(selected_crates)
-        for each_box in reversed(selected_crates):
+        for each_box in (selected_crates):
             bunch_of_crates[to_dict].append(each_box)
             print(bunch_of_crates[to_dict])
             bunch_of_crates[from_dict].pop()
             print(bunch_of_crates[from_dict])
+
 
     final = "".join(v[-1] for v in bunch_of_crates.values())
     print(final)
