@@ -17,7 +17,6 @@ with open("input.txt", 'r', encoding = 'utf-8') as f:
 # Create lists for holding the boxes
 with open("input.txt", 'r', encoding = 'utf-8') as f:
     head = [next(f) for x in range(8)]
-
     bunch_of_crates = {}
     
     for value in list_of_values:
@@ -37,24 +36,24 @@ with open("input.txt", 'r', encoding = 'utf-8') as f:
         if value == 29 : bunch_of_crates['8']=list8 = value = temp_list[::-1]
         if value == 33 : bunch_of_crates['9']=list9 = value = temp_list[::-1]
 
-    body = [next(f) for x in range(503)]
+    body = f.readlines()[10:]
+    print(body)
 
     for line in body:
-        if line.startswith('move'):
-            line = line.replace('from ', '')
-            line = line.replace('to ', '')
-            line = line.replace('move ', '')
-            line = line.split(" ")
+        line = line.replace('from ', '')
+        line = line.replace('to ', '')
+        line = line.replace('move ', '')
+        line = line.split(" ")
             
-            from_dict   = line[1]
-            from_dict   = from_dict.rstrip()
-            to_dict     = line[2]
-            to_dict     = to_dict.rstrip()
-            boxes       = int(line[0])
+        from_dict   = line[1]
+        from_dict   = from_dict.rstrip()
+        to_dict     = line[2]
+        to_dict     = to_dict.rstrip()
+        boxes       = int(line[0])
         
-            selected_crates = (bunch_of_crates[from_dict][-boxes:])
-            for each_box in selected_crates: (bunch_of_crates[to_dict].append(each_box))
-            for each_box in selected_crates: (bunch_of_crates[from_dict].remove(each_box))
+        selected_crates = (bunch_of_crates[from_dict][-boxes:])
+        for each_box in selected_crates: (bunch_of_crates[to_dict].append(each_box))
+        for each_box in selected_crates: (bunch_of_crates[from_dict].remove(each_box))
 
 
     print("Final set")
@@ -72,4 +71,4 @@ with open("input.txt", 'r', encoding = 'utf-8') as f:
     final = (' '.join(final))
     final = final.replace(" ", '')
     print(final)
-    # BWQZJNRLF   
+    # HNFFVRLCJ  
