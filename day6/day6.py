@@ -14,7 +14,7 @@ second_bit  = 4
 last_bit    = len(data)
 control_bit = 0
 
-# first check the first 4 characters and evaluate if it is a marker
+# check if a string contains duplicate entries
 def check_unique(str):
     for i in range(len(str)):
         for j in range(i + 1,len(str)):
@@ -22,6 +22,7 @@ def check_unique(str):
                 return False
     return True
 
+# first check the first 4 characters and evaluate if it is a marker
 list_of_matches = []
 
 while control_bit <= last_bit:
