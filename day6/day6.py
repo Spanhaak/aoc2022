@@ -31,13 +31,11 @@ while control_bit <= last_bit:
     control_bit = control_bit + 1
     
     if (check_unique(selection)):
-        print(selection)
         list_of_matches.append(selection)
     else:
-        print("not")
-
-print(list_of_matches)
+        continue
 
 first_slice = data.partition(list_of_matches[0])
 len_slice = (len(first_slice[0]))
-print(len_slice + 4) 
+print(len_slice + 4)
+# 1356 
