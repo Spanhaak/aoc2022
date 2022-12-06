@@ -8,7 +8,7 @@ with open("/Users/marco.spanhaak1/code/python/aoc2022/day6/input.txt", "r", enco
 # after 7th char
 
 # Some characteristics on the input
-
+set_size    = 4
 first_bit   = 0
 second_bit  = 4
 last_bit    = len(data)
@@ -37,5 +37,5 @@ while control_bit <= last_bit:
 
 first_slice = data.partition(list_of_matches[0])
 len_slice = (len(first_slice[0]))
-print(len_slice + 4)
+print(len_slice + set_size)
 # 1356 
