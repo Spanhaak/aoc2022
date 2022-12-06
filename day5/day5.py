@@ -2,7 +2,7 @@
 
 from itertools import islice
 
-# First generate a list of stacks
+# First generate stacks
 list_of_values = []
 
 with open("input.txt", 'r', encoding = 'utf-8') as f:
@@ -13,7 +13,7 @@ with open("input.txt", 'r', encoding = 'utf-8') as f:
             continue
         else:
             list_of_values.append(values_line.rfind(number))
-    
+
 # Create lists for holding the boxes
 with open("input.txt", 'r', encoding = 'utf-8') as f:
     head = [next(f) for x in range(8)]
@@ -36,8 +36,9 @@ with open("input.txt", 'r', encoding = 'utf-8') as f:
         if value == 29 : bunch_of_crates['8']=list8 = value = temp_list[::-1]
         if value == 33 : bunch_of_crates['9']=list9 = value = temp_list[::-1]
 
+        print(value)
+
     body = f.readlines()[10:]
-    print(body)
 
     for line in body:
         line = line.replace('from ', '')
@@ -55,17 +56,6 @@ with open("input.txt", 'r', encoding = 'utf-8') as f:
         for each_box in selected_crates: (bunch_of_crates[to_dict].append(each_box))
         for each_box in selected_crates: (bunch_of_crates[from_dict].remove(each_box))
 
-
-    print("Final set")
-    print(bunch_of_crates['1'])
-    print(bunch_of_crates['2'])
-    print(bunch_of_crates['3'])
-    print(bunch_of_crates['4'])
-    print(bunch_of_crates['5'])
-    print(bunch_of_crates['6'])
-    print(bunch_of_crates['7'])
-    print(bunch_of_crates['8'])
-    print(bunch_of_crates['9'])
 
     final = (bunch_of_crates['1'][0], bunch_of_crates['2'][0], bunch_of_crates['3'][0], bunch_of_crates['4'][0], bunch_of_crates['5'][0], bunch_of_crates['6'][0], bunch_of_crates['7'][0], bunch_of_crates['8'][0], bunch_of_crates['9'][0])
     final = (' '.join(final))
